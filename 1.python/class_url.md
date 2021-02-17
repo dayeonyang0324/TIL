@@ -84,4 +84,3 @@ def top_rated_movie():
 print(top_rated_movie) #제목만 뽑아오는 함수
 ```
 
-86fbe66fae3a7aab2e5cc3116ba10484
