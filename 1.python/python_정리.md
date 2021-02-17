@@ -1,3 +1,5 @@
+### Python 정리
+
 - `True`와 `False`로 이뤄진 `bool` 타입
 
 - `bool(value)` 하면 `True`와 `False` 가 출력된다.
@@ -27,6 +29,36 @@
 
   종료조건을 반드시 설정해줘야 한다.
 
+  #### while문 예시
+
+  ```python
+  #1부터 입력한 수까지 더하기
+  
+  a = int(input())
+  total = 0
+  ad = 0
+  
+  #ad > a일때 while문 종료
+  while ad <= a:
+      total += ad
+      ad += 1
+      
+  print(total) 
+  ```
+
+  ```python
+  #1의 자리수부터 한 줄씩 나타나게 하기
+  
+  a = int(input())
+  
+  #a가 0이 되면 while문 종료
+  while a > 0:
+      print(a % 10)
+      a = a // 10
+  ```
+
+  
+
   ### `for`문: `for value in sequence:`
 
   정해진 범위 내 (시퀀스) 에서 순차적으로 코드를 실행
@@ -45,35 +77,6 @@
 - 몫 //
 
 - 나머지 %
-
-
-
-#### while문 예시
-
-```python
-#1부터 입력한 수까지 더하기
-
-a = int(input())
-total = 0
-ad = 0
-
-while ad <= a:
-    total += ad
-    ad += 1
-    
-print(total) 
-
-```
-
-```python
-#1의 자리수부터 한 줄씩 나타나게 하기
-
-a = int(input())
-
-while a > 0:
-    print(a % 10)
-    a = a // 10
-```
 
 
 
@@ -247,193 +250,5 @@ def is_pal_while(word):
         else: 
             return False
 ```
-
-
-
-# 오답노트
-
-- 모든 요소가 참이거나 비어있으면 True를 반환하는 함수 만들기(practice1 #2)
-
-```python
-def my_all(numbers):
-    result = True
-    #리스트의 요소들을 순회
-    for number in numbers:
-        if not number:
-            return False
-    return True
-```
-
-```python
-print(my_all([])) #True
-print(my_all([1, 2, 5, '6'])) #True
-print(my_all([[], 2, 5, '6'])) #False
-```
-
-
-
-- 2차원 리스트를 반복하여 숫자의 합 반환하는 함수(exercise3 #1)
-
-```python
-#index로 접근해서 풀기 - 행렬성분이라 생각하고 계산하기!
-def sum_list_index(numbers):
-    total = 0
-    #range(0, 3) = 0, 1, 2
-    #모든 배열 길이만큼 반복
-    for i in range(len(numbers)):
-        #내부 배열 길이만큼 반복
-        for j in range(len(numbers[i])):
-            #전체 배열 돌린후 내부 배열 돌리기
-            total += numbers[i][j]
-    return total
-```
-
-```python
-#while문으로 풀기
-def sum_list(numbers):
-    i = 0
-    result = 0
-    while i < len(numbers):
-        j = 0
-        while j < len(numbers[i]):
-            result += numbers[i][j]
-            j += 1
-        i += 1
-    return result
-```
-
-```python
-print(sum_list_index([[1, 4], [10, 5], [20, 30]]))
-```
-
-
-
-- 주어진 문자열(text)에서 제시된 알파벳(alphabet)의 등장 위치를 리스트로 반환하는 함수. 해당 알파벳이 등장하지 않으면 -1 반환 (exercise4 #1)
-
-```python
-def my_find(text, alphabet):
-    result = []
-    for idx, word in enumerate(text):
-        if word == alphabet:
-            result.append(idx)
-    return result if result else -1 
-```
-
-```python
-print(my_find('apple', 'p')) #[1,2]
-print(my_find('a', 'p')) #-1
-```
-
-
-
-- 주어진 학생 n과 출석한 학생명부 students 문자열이 있다. 결석한 학생들로 구성된 문자열을 반환 (exercise4 #2)
-
-```python
-def check(n, students):
-    students = list(map(int, students.split()))
-    result = []
-    for i in range(1, n+1):
-        if i not in students:
-            result.append(str(i))
-    return ' '.join(result)
-```
-
-```python
-print(check(7, '1 3 5')) # 2 4 6 7
-```
-
-
-
-- for문 2번 사용해서 1 / 12 / 123 / 1234 와 같은 식으로 계단 만들기 = 줄 세우기 안에 또 다른 줄세우기 (workshop2 #3)
-
-```python
-for i in range(1, number + 1):
-    for j in range(1, i+1):
-        print(j, end='')
-    print()
-```
-
-
-
-- 혈액형 분류하기 - 리스트를 전달받아 키는 혈액형의 종류, value는 사람 수인 딕셔너리로 반환하는 함수 만들기 (workshop5 #2)
-
-```python
-def count_blood(kinds):
-    result = {}
-    for kind in kinds:
-        if kind in result.keys():
-            result[kind] += 1
-        else:
-            result[kind] = 1
-    return result             
-```
-
-```python
-count_blood([
-     'A', 'B', 'A', 'O', 'AB', 'AB',
-     'O', 'A', 'B', 'O', 'B', 'AB',
- ])
-```
-
-
-
-- 중복되는 문자를 리스트로 반환하기 (workshop6 #1)
-
-```python
-def duplicated_letters(words):
-    result = []
-    for word in words:
-        if words.count(word) >= 2:
-            if word not in result:
-                result += word            
-    return result    
-```
-
-```python
-duplicated_letters('apple') #['p']
-duplicated_letters('banana') #['a', 'n']
-```
-
-
-
-- 리스트에 나타나는 연속적인 숫자에서 하나만 남기고 삭제하는 함수 (workshop6 #3)
-
-```python
-def lonely(numbers):
-    total = [numbers[0]]
-    for number in numbers:
-        if total[-1] != number:
-            total.append(number)
-    return total
-```
-
-```python
-lonely([1, 1, 3, 3, 0, 1, 1]) #[1, 3, 0, 1]
-lonely([4, 4, 4, 3, 3]) #[4, 3]
-```
-
-
-
-- 중복되지 않은 숫자들의 리스트 요소들의 합(exercise5 #2)
-
-```python
-def sum_of_repeat_number(numbers):
-    for number in numbers:
-        #number의 개수가 2이상이면 삭제
-        if number == number:
-            count_num = numbers.count(number)
-            for i in range(count_num):
-                numbers.remove(number)
-        return sum(numbers)
-```
-
-```python
-print(sum_of_repeat_number([4, 4, 7, 8, 10])) #25
-```
-
-
-
-
-
 
 
