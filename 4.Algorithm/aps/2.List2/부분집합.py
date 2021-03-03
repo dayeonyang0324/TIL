@@ -1,3 +1,4 @@
+
 #부분집합을 for문을 사용해서 하나하나 구하는거 = 매우 매우 길어짐 주의
 bit = [0, 0, 0, 0]
 for i in range(2):
@@ -33,3 +34,5 @@ for i in range(1 << n):
     print()
     #전체리스트.append(중간리스트)
 print()
+
+

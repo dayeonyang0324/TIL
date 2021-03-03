@@ -1,30 +1,50 @@
-# 중앙 값을 기준으로 중앙의 왼쪽에 있는지 오른쪽에 있는지 판단한다
-# 없는 곳은 범위를 버려버리고 남은 위치의 절반을 또 다시 잡고 판단한다
-# 업다운 게임이랑 똑같음.
 
-def binarySearch(a, key):
-    start = 0
-    end = len(a) - 1
-    while start <= end:
-        middle = (start + end) // 2
-        if a[middle] == key:
-            return True
-        elif a[middle] > key:
-            end = middle - 1
+#list a가 정렬되어 있지 않은 경우
+def sequentialSearch(a, n, key):
+    i = 0
+    while i < n and a[i] != key:
+        i += 1
+        if i < n:
+            return i
         else:
-            start = middle + 1
-    return False
+            return -1
 
 
-#재귀함수로 풀기
-def binarySearch2(a, low, high, key):
-    if low > high:
-        return False
-    else:
-        middle = (low + high) // 2
-        if a[middle] == key:
-            return True
-        elif a[middle] > key:
-            return binarySearch2(a, low, middle - 1, key)
-        elif a[middle] < key:
-            return binarySearch2(a, middle + 1, high, key)
+#list a가 정렬되어 있는 경우
+def sequentialSearch2(a, n, key):
+    i = 0
+    while i < n and a[i] < key:
+        i += 1
+        if i < n and a[i] == key:
+            return i
+        else:
+            return -1
+
+
+# 예
+arr = [4, 9, 11, 23, 19, 7]
+
+key = 23
+
+for i in range(len(arr)):
+    if key == arr[i]:
+        print(i)
+        break
+else:
+    print('0')
+
+
+# 예
+arr = [4, 7, 9, 11, 19, 23]
+
+key = 23
+
+for i in range(len(arr)):
+    if key == arr[i]:
+        print(i)
+        break
+    elif key < arr[i]:
+        print(i)
+        break
+else:
+    print('0')
