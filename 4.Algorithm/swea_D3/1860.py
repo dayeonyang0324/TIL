@@ -1,3 +1,6 @@
+import sys
+sys.stdin = open('input.txt')
+
 # 사람들이 오는 시간(초)을 오름차순으로 정렬하는 함수 생성 : bubble_sort활용
 def sort(time):
     for j in range(len(time)-1, 0, -1):
@@ -30,3 +33,32 @@ for tc in range(1, T+1):
             break  # 한개라도 존재하면 바로 멈추고 'Impossible'출력함. 기본값은 'Possible'
 
     print('#{} {}'.format(tc, result))
+
+
+############################################3
+# 다른 사람 풀이
+
+# def solution():
+#     cnt = 0
+#     # 11,111이하로 조건
+#     for idx in range(11112):
+#         if idx % M == 0 and idx != 0:
+#             cnt += K
+#
+#         while idx == people[0]:
+#             if cnt == 0:
+#                 return 'Impossible'
+#             else:
+#                 cnt -= 1
+#                 people.pop(0)
+#
+#             if len(people) == 0:
+#                 return 'Possible'
+#
+#
+# T = int(input())
+# for tc in range(1, T + 1):
+#     N, M, K = map(int, input().split())
+#     people = sorted(list(map(int, input().split())))
+#
+#     print('#{} {}'.format(tc, solution()))
