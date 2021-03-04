@@ -1,6 +1,3 @@
-import sys
-sys.stdin = open('input.txt')
-
 
 def row(num):
     # 가로

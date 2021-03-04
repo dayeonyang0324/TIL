@@ -1,5 +1,3 @@
-import sys
-sys.stdin = open('input.txt')
 
 # 사람들이 오는 시간(초)을 오름차순으로 정렬하는 함수 생성 : bubble_sort활용
 def sort(time):
