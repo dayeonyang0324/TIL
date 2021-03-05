@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>학생 건강 설문</title>
+</head>
+<body>
+  <header>
+    <!-- 홈페이지로 이동하는 링크 -->
+    <a href="https://www.링크이름.com">링크이름(나에게 보여지는 글)
+      <img src="이미지.png" alt="네이버 로고">
+    </a>
+    <!-- 이런식으로 a가 뒤에 넣어져서 닫히면 사진안에 링크가 들어가는 형태 -->
+    <h1>설문</h1>
+  </header>
+  <section>
+    <!--설문 작성 form -->
+    <form action="#">
+      <div>
+        <label for="name"> .. </label><br> <!--br은 줄바꿈-->
+        <input type="text" id="name" autofocus> <!--id와 for는 서로 정보를 받을 수 있게 해줌-->
+      </div>
+      <div>
+        <label for="choose">선택</label><br>
+        <select name="#" id="choose">
+          <option value="1" disabled>1</option> <!--disabled를 사용하면 값 선택이 안되게 할 수 있음-->
+          <option value="2">2</option>
+          <!-- alt + shift = 복사-->
+        </select>
+      </div>
+      <div>
+        <input type="radio" id="normal" name="" value="" checked> <!--checked는 기본 설정으로 체크되어 있음-->
+        <label for="normal"></label>
+        <!-- type 중에 하나를 선택해서 형식을 만들 수 있음 -->
+      </div>
+      <input type="submit" value="클릭"> <!--type submit을 선택하면 제출 키를 만들 수 있음-->
+    </form>
+  </section>
+  <footer>
+    <!-- footer 내용 -->
+  </footer>
+</body>
+</html>
