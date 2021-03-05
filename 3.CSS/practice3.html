@@ -1,0 +1,65 @@
+<!-- 부트스트랩을 사용하기 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <!-- 부트 스트랩을 사용하기 위해서는 사이트에서 제공하는 <link>한줄과 맨 아래 body가  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <!-- google font 사용하기 -->
+  <link href="https://fonts.googleapis.com/css2?family=Hanalei&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+  <!-- bootstrap icon 사용하기 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+</head>
+<body>
+  <style>
+    /* h1으로 지정된 모든 값에 스타일 부여할 수 있음 */
+    h1 {
+      font-family: Nanum Pen Script;
+      color:rgb(72, 72, 155);
+    }
+  </style>
+  <h1>hello!</h1>
+  <h1>안녕하세요!</h1>
+
+  <!-- 아이콘 첨가 -->
+  <i class="bi-alarm"></i>
+  <i class="bi bi-smartwatch" style="font-size: 10rem; color: cornflowerblue;"></i>
+
+  <!-- margin값 부여 -->
+  <div class="box mt-3 ms-5">margin-top 3</div>
+  <div class="box m-4">margin 4</div>
+  <div class="box mx-auto">mx-auto, 가운데 정렬</div>
+  <div class="box ms-auto">ms-auto, 오른쪽 정렬</div>
+
+  <!-- 텍스트 정렬 방법 -->
+  <p class="text-start">텍스트 왼쪽부터 시작</p>
+  <p class="text-center">텍스트 센터</p>
+  <p class="text-end">텍스트 끝에서부터 시작</p>
+
+  <!-- co1 개수는 총 12개로 픽셀 크기에 따라 사이즈 별로 나눌 수 있다 -->
+  <div class="row">
+    <div class="item col-3">
+      <p>1</p>
+    </div>  
+    <div class="item col-6">
+      <p>1</p>
+    </div>
+    <div class="item col-3">
+      <p>1</p>
+    </div>
+  </div> 
+
+  <!-- 부트 스트랩을 활용하여 텍스트, 문단 정렬 : d-flex활용 -->
+  <div class="d-flex flex-column justify-content-center align-items-center">
+    <div class="text-white fw-bold display-1">1</div>
+    <div class="text-white fw-bold display-1">1</div>
+  </div>
+  
+  <!-- 부트스트랩에서 받아온 bundle삽입 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+</html>

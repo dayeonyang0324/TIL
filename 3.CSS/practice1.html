@@ -1,0 +1,34 @@
+<!-- 기본적으로 부트스트랩을 활용하지만 여기서는 style을 이용함 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* class에 직접 변수를 주고 style에서 원하는 디자인 값을 할당해줌 */
+    .box1 {
+      width: 500px;
+      border-width: 2px;
+      border-style: dashed;
+      border-color: black;
+      padding-left: 50px;
+      margin-bottom: 30px;
+    }
+
+    .box2 {
+      width: 500px;
+      border: 2px solid black;
+      /* text-align: center; 안에 컨텐츠 정렬 */
+      padding: 20px 30px;
+      margin: 0 auto; 
+      /* margin 상하좌우, 상하/좌우, 상/좌우/하, 상/우/하/좌 */
+    }
+  </style>
+</head>
+<body>
+  <div class="box1" style="color: aqua;">div</div> <!-- 기본적으로 클래스에 지정해주지만 직접 할 수도 있음 -->
+  <div class="box2">div</div>
+</body>
+</html>
