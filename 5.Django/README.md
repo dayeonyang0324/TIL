@@ -1,5 +1,7 @@
 # Django 
 
+### 1. 프로젝트 생성 및 앱 생성
+
 #### - django-admin startproject 프로젝트 이름
 
 #### - python manage.py runserver
@@ -33,4 +35,18 @@ def index(request):
 - models.py
 
 
+
+### 2. models 생성
+
+#### - models.py
+
+model 변경사항 발생
+
+#### - python manage.py makemigrations
+
+migrations 파일생성
+
+#### - python manage.py migrate
+
+db적용
 
