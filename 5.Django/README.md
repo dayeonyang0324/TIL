@@ -1,32 +1,40 @@
 # Django 
 
-### 1. 프로젝트 생성 및 앱 생성
+`python 3.8.7`
 
-#### - django-admin startproject 프로젝트 이름
+### 1. 가상환경 생성 및 적용
 
-#### - python manage.py runserver
+- git bash에서 `python -m venv venv
+- vscode 실행 후 `ctrl + shift + p` venv실행
+- `pip install django` 
 
-- 이 명령어를 통해 url로 이동하며 수시로 확인할 수 있음
+### 2. 프로젝트 생성 및 앱 생성
 
-#### - python manage.py startapp 앱이름
+- `django-admin startproject 프로젝트 이름`
+- `python manag.py runserver` 실행해서 확인
+- `python manage.py startapp 앱이름`
 
-- settings.py의 installed_apps 제일 처음에 생성한 앱이름 작성하기
+- settings.py의 INSTALLED_APPS  맨 앞에 생성한 앱이름 작성하기
+- 프로젝트에 `templates`파일 > `프로젝트이름 파일` 생성후 `base.html`만들기
+  - bootstrap5 사용하기위해 설치해주고 INSTALLED_APPS에 등록
+  - settings.py의 'DIRS'에 `[BASE_DIR / '프로젝트 이름' / 'templates',],` 등록
 
-#### - 프로젝트의 url.py에 path를 추가하기
+### 3. 앱에 urls.py 파일 생성
 
-- `from 앱이름 import views` 입력하기
-- 예) `path('index/', views.index),`
-
-#### - 앱의 views에 함수 생성
-
-```
-def index(request):
-    return render(request, 'index.html')
-```
-
-#### - 앱에 `templates` 폴더에 path 에 해당하는 .html 파일을 생성 후 작성
+- 프로젝트 urls.py에는 import path, include 등록 후 `urlpatterns`에 `path('앱이름/', include('앱이름.urls'))`
 
 
+
+### 4. 앱 model, form, views, urls, templates 설정
+
+- models.py 파일 생성 후 모델만들기
+  - `python manage.py makemigrations` 파일 생성 후
+  - `python manage.py migrate` 명령어로 DB 만들어 저장
+  - `admin.py`에 model 등록
+- forms.py 파일 생성 후 class 만들기
+- urls.py에 app_name 등록 후 urlpatterns 작성
+- 해당 views 작성
+- 앱 내에 `templates` 폴더 > `앱이름` 폴더 생성 후 .html만들기
 
 ##### !이것만 확인하자!
 
@@ -36,17 +44,17 @@ def index(request):
 
 
 
-### 2. models 생성
+### #
 
-#### - models.py
+- 관리자 생성 
 
-model 변경사항 발생
+```bash
+$ python manage.py createsuperuser
+```
 
-#### - python manage.py makemigrations
+- 버전 관리
 
-migrations 파일생성
-
-#### - python manage.py migrate
-
-db적용
+```bash
+$ pip freeze > requirements.txt
+```
 
