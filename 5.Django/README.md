@@ -4,13 +4,16 @@
 
 ### 1. 가상환경 생성 및 적용
 
-- git bash에서 `python -m venv venv
-- vscode 실행 후 `ctrl + shift + p` venv실행
+- git bash에서 `python -m venv venv`
+- vscode 실행 후 `ctrl + shift + p`  venv실행
 - `pip install django` 
+- txt file있다면 `pip install -r requirements.txt`
+
+ 
 
 ### 2. 프로젝트 생성 및 앱 생성
 
-- `django-admin startproject 프로젝트 이름`
+- `django-admin startproject 프로젝트 이름 .`
 - `python manag.py runserver` 실행해서 확인
 - `python manage.py startapp 앱이름`
 
