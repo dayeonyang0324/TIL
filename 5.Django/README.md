@@ -7,9 +7,9 @@
 - git bash에서 `python -m venv venv`
 - vscode 실행 후 `ctrl + shift + p`  venv실행
 - `pip install django` 
-- txt file있다면 `pip install -r requirements.txt`
+- requirements.txt file있다면 `pip install -r requirements.txt`
 
- 
+ <br>
 
 ### 2. 프로젝트 생성 및 앱 생성
 
@@ -22,11 +22,14 @@
   - bootstrap5 사용하기위해 설치해주고 INSTALLED_APPS에 등록
   - settings.py의 'DIRS'에 `[BASE_DIR / '프로젝트 이름' / 'templates',],` 등록
 
+<br>
+
 ### 3. 앱에 urls.py 파일 생성
 
 - 프로젝트 urls.py에는 import path, include 등록 후 `urlpatterns`에 `path('앱이름/', include('앱이름.urls'))`
+- 생성된 앱에 마찬가지로 `app_name`과 `urlpatterns` 등록
 
-
+<br>
 
 ### 4. 앱 model, form, views, urls, templates 설정
 
@@ -39,13 +42,15 @@
 - 해당 views 작성
 - 앱 내에 `templates` 폴더 > `앱이름` 폴더 생성 후 .html만들기
 
+  <br>
+
 ##### !이것만 확인하자!
 
 - urls.py
 - views.py
 - models.py
 
-
+<br>
 
 ### #
 
