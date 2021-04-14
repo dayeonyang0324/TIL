@@ -8,6 +8,7 @@ for i in range(N):
     people.append([x, y])
 
 
+# 사람들의 몸무게와 키를 비교해야함
 result = []
 for i in range(N):
     cnt = 1
