@@ -66,3 +66,10 @@ $ python manage.py createsuperuser
 $ pip freeze > requirements.txt
 ```
 
+- seed 생성
+
+```bash
+# seed 설치 후 settings 등록
+$ python manage.py seed (앱이름) --number=(seed 생성 갯수)
+```
+
