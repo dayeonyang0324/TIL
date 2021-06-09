@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    const URL = 'https://jsonplaceholder.typicode.com/todos/1/aaaaaaa'
+    //1. XHR
+    //1-1.
+    // const xhr = new XMLHttpRequest()
+    
+    // xhr.open('GET', URL)
+    // xhr.send()
+
+    // const response = xhr.response
+    // console.log(response) // ''
+
+    //1-2.
+    // xhr.onload = function () {
+    //   if (xhr.status === 200) {
+    //     const response = xhr.response
+    //     console.log(response)
+    //   }
+    // }
+
+
+    //2. Axios
+    //2-1. Axios의 return 값은 Promise
+    const myPromise = axios.get(URL)
+    // console.log(myPromise) // Promise Object
+
+    myPromise
+      .then((response) => {
+        // console.log(response)
+        return response.data
+      })
+    
+
+    //2-2. chaining
+    axios.get(URL)
+      .then((response) => {
+        console.log(response)
+        return response.data
+      })
+      .then((response) => {
+        console.log(response)
+        return response.title
+      }) 
+      .then((response) => {
+        console.log(response)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+      .finally(function () {
+        console.log('나는 마지막에 무조건 시행!!!')
+      })
+  </script>
+</body>
+</html>

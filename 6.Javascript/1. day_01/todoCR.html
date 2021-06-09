@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="/todo/">
+    <input type="text">
+    <button>Add</button>
+  </form>
+  <ul>
+
+  </ul>
+
+  <script>      
+    // 이벤트 타겟 설정
+    const form = document.querySelector('form')
+      
+    function addTodo (event) {
+      // event의 기본 동작을 막는다.
+      event.preventDefault()
+      
+      // input 요소를 선택하고, value 값을 저장한다.
+      const input = document.querySelector('input')
+      const content = input.value
+
+      if (content.trim()) {
+        // 새로운 li 요소 생성, input value를 innerText로 넣는다.
+        const li = document.createElement('li')
+        li.innerText = content
+
+        // ul 요소를 선택, ul의 자식 요소로 li 요소를 추가한다.
+        const ul = document.querySelector('ul')
+        ul.appendChild(li)
+      } else {
+        alert('할 일을 입력해주세요.')
+      }
+      event.target.reset()
+    }
+    
+    form.addEventListener('submit', addTodo)
+  </script>
+</body>
+</html>

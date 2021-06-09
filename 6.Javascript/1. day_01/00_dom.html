@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic DOM Manipulation</title>
+  <style>
+    #king {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="header">DOM Manipulation</h1>
+  <h2 id="lang-header">Programming Languages</h2>
+  <ul>
+    <li class="lang">Python</li>
+    <li class="lang">Java</li>
+    <li class="lang" id="special-lang">JavaScript</li>
+  </ul>
+
+  <h2 id="frame-header">Frameworks</h2>
+  <ul>
+    <li class="framework" id="special-frame">Django</li>
+    <li class="framework">Spring</li>
+    <li class="framework">Vue.js</li>
+  </ul>
+
+  <script>
+    //1. window & document
+    // console.log(window)
+    // console.log(document)
+    // console.log(window.document)
+
+    //2. querySelector (id선택자는 #으로 시작)
+    const mainHeader = document.querySelector('h1')
+    const langHeader = document.querySelector('#lang-header')
+    const frameHeader = document.querySelector('#frame-header')
+    // console.log(mainHeader, langHeader, frameHeader)
+
+    //3. querySelectorAll (class선택자는 .으로 시작)
+    const langLi = document.querySelectorAll('.lang')
+    const frameworkLi = document.querySelectorAll('.framework')
+    // console.log(langLi, frameworkLi) 리스트로 출력
+
+    //4. 해당하는 요소가 여러개일 경우 첫번째 해당하는 값 출력
+    const selectOne = document.querySelector('.lang')
+    // console.log(selectOne)
+    
+    //5. 복합 선택자
+    const selectDescendant = document.querySelector('body li')
+    // const selectDescendant = document.querySelectorAll('body li')
+    const selectChild = document.querySelector('body > li')
+    // console.log(selectDescendant) 
+    // console.log(selectChild) null값 출력
+
+    //6. id로 값 접근, class 이름으로 값 접근, tag 이름으로 값 접근
+    const selectSepcialLang = document.getElementById('special-lang')
+    const selectAllLangs = document.getElementsByClassName('framework')
+    const selectAllLiTags = document.getElementsByTagName('li')
+    // console.log(selectSepcialLang, selectAllLangs, selectAllLiTags)
+
+
+
+    //1. 새로운 요소 tag 생성 -> 아래 innertext로 값 할당
+    const browserHeader = document.createElement('h2')
+    const ul = document.createElement('ul')
+    const li1 = document.createElement('li')
+    const li2 = document.createElement('li')
+    const li3 = document.createElement('li')
+    // console.log(browserHeader, li1, li2, li3) 
+
+    //2. innerText, innerHTML
+    browserHeader.innerText = 'Browsers'
+    li1.innerText = 'IE'
+    li2.innerText = '<strong>FireFox</strong>'
+    li3.innerHTML = '<strong>Chrome</strong>'
+    // console.log(browserHeader, li1, li2, li3)
+
+    //3. append DOM 
+    const body = document.querySelector('body')
+    body.appendChild(browserHeader)
+    body.appendChild(ul)
+
+    ul.append(li1, li2, li3) 
+    // ul.appendChild(li1, li2, li3) 
+
+    //4. Delete
+    // removeChild
+    // ul.removeChild(li1) 
+    // ul.removeChild(li2)
+
+    // remove
+    // ul.remove()
+    // body.remove()
+
+    //5. Element Styling
+    li1.style.cursor = 'pointer'
+    li2.style.color = 'blue'
+    li3.style.background = 'red'
+
+    // setAttribute
+    li3.setAttribute('id', 'king')
+
+    // getAttribute
+    const getAttr = li1.getAttribute('style')
+    const getAttr2 = li3.getAttribute('style')
+    console.log(getAttr)
+    console.log(getAttr2)
+  </script>
+</body>
+</html>
