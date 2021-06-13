@@ -1,4 +1,5 @@
 # 1546
+
 N = int(input())
 # 점수 리스트로 받기
 score = list(map(int, input().split()))
@@ -15,4 +16,5 @@ for i in score:
 # for i in new_score:
 #     total += i
 # print(total/N)
+
 print(sum(new_score)/N)

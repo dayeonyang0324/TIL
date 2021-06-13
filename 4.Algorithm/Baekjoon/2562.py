@@ -1,3 +1,5 @@
+# 2562
+
 # 인덱스를 1부터 주기 위해 [0]을 추가함
 num = [0] + list(int(input()) for _ in range(9))
 

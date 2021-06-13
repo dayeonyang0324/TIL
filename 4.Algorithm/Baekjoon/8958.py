@@ -3,7 +3,7 @@ T = int(input())
 for tc in range(1, T+1):
     quiz = input()
 
-    # 총점, 연속으로 O이 나올때 count할 변수
+    # 총점, 연속으로 O이 나올때 count 할 변수
     score = 0
     cnt = 0
     for i in range(len(quiz)):
