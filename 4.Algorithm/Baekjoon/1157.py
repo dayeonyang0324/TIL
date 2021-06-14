@@ -23,6 +23,8 @@ def get_key(v):
 
 # 최대 value 구하기
 values = list(result.values())
+# 함수 대신 key 값들의 리스트에서 찾기
+# keys = list(result.keys())
 
 # 최대 value 를 count 해서 길이가 1이 넘는다면 ? 출력
 if values.count(max(values)) > 1:
@@ -30,3 +32,5 @@ if values.count(max(values)) > 1:
 # 아니라면 최대 value를 가진 key 찾기
 else:
     print(get_key(max(values)))
+    # 최대 value에 해당하는 인덱스를 찾아 key 값 찾기
+    # print(keys[values.index(max(values))])
