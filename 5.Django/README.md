@@ -73,3 +73,9 @@ $ pip freeze > requirements.txt
 $ python manage.py seed (앱이름) --number=(seed 생성 갯수)
 ```
 
+- json 파일 받아오기
+
+```bash
+$ python manage.py loaddata movies.json(json파일명)
+```
+
