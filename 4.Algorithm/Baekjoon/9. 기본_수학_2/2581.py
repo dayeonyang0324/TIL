@@ -1,6 +1,5 @@
 # 2581
 
-# 1978과 유사한 문제
 mini = int(input())
 maxi = int(input())
 
@@ -9,12 +8,12 @@ result = []
 for num in range(mini, maxi+1):
     cnt = 0
     # 1보다 큰 수여야 소수의 조건 만족한다
-    # 나머지는 1978번과 유사
+    # 나머지는 1978과 유사함
     if num > 1:
         for i in range(2, num):
             if num % i == 0:
                 cnt += 1
-                break  # break로 for문을 끝내줘야 시간초과가 뜨지 않음
+                break  # break로 for 문을 끝내줘야 시간초과가 뜨지 않음
         if cnt == 0:
             result.append(num)
 
