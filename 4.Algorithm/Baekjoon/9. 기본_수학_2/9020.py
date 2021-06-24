@@ -36,7 +36,7 @@ T = int(input())
 for tc in range(T):
     N = int(input())
     result = []
-    # 절반만 확인하면 뒤에는 반복하기 때문에 반만 확인했다
+    # 절반만 확인하면 뒤에는 반복하기 때문에 반만 확인했다 (내림차순으로 확인)
     for i in range(N//2, 1, -1):
         if prime(N-i) and prime(i):
             # 바로 출력하고 값이 나온다면 break를 하니 시간초과가 나지 않았다
