@@ -25,6 +25,7 @@ N = 123456 * 2 + 1
 check = [True] * N
 for i in range(2, int(N**0.5)+1):
     if check[i]:
+        # 값이 있다면 해당 배수들은 소수가 아니므로 false
         for j in range(2*i, N, i):
             check[j] = False
 
