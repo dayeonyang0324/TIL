@@ -1,4 +1,6 @@
-# 1
+# 2798
+
+# 1 모든 카드배열의 합을 넣고 정렬한 후 가까운 최댓값 선택
 N, M = map(int, input().split())
 card = list(map(int, input().split()))
 
@@ -19,7 +21,7 @@ for i in range(len(result)):
 
 
 ###############################################
-# 2
+# 2 가능한 카드 배열의 합을 구하면서 바로 최댓값 뽑기
 N, M = map(int, input().split())
 card = list(map(int, input().split()))
 
