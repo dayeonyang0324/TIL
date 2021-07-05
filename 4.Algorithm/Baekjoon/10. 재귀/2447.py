@@ -13,12 +13,12 @@ def get_stars(n):
 
 star = ["***", "* *", "***"]
 n = int(input())
-e = 0
+k = 0
 while n != 3:
     n = int(n / 3)
-e += 1
+    k += 1
 
-for i in range(e):
+for i in range(k):
     star = get_stars(star)
 for i in star:
     print(i)
