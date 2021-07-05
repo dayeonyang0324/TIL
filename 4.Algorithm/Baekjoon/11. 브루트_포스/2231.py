@@ -1,9 +1,10 @@
+# 2331
 
 N = int(input())
 result = 0
 for i in range(1, N+1):
-    num = list(map(int, str(i)))  # 숫자들의 각자리 수의 합과 전체 숫자의 합이 필요하다
-    result = i + sum(num)
+    num = list(map(int, str(i)))  # 숫자 각 자리들의 리스트
+    result = i + sum(num)  # 숫자 각 자리의 합과 해당 숫자를 더한다
     if result == N:
         print(i)
         break
