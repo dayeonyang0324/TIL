@@ -12,7 +12,7 @@ for i in range(M-7):
         # 주어진 배열을 8개씩 나눠서 탐색하는 for문
         for k in range(i, i+8):
             for l in range(j, j+8):
-                # 이해가 잘 안감..
+                # 다른사람풀이! 이 부분 이해가 잘 안감!!
                 # 합이 짝수일때 == (0,0)부터 시작하는 대각선
                 if (k+l) % 2 == 0:
                     if table[k][l] == 'B':
