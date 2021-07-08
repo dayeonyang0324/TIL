@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <img v-if="imgSrc" :src="imgSrc" alt="sample img">
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const API_URL = 'https://dog.ceo/api/breeds/image/random'
+    const app = new Vue({
+      el: '#app',
+      data: {
+        imgSrc: '',
+      },
+      methods: {
+        getImg: function () {
+          axios.get(API_URL)
+            .then(response => {
+              this.imgSrc = response.data.message
+            })
+        }
+      },
+      // Vue 인스턴스가 생성되면
+      // getImg() 함수를 호출해 시작화면에 바로 이미지 데이터를 불러온다.
+      
+      // data에 직접 접근이 가능하기 때문에 컴포넌트 초기에 외부에서 받아온 값들로
+      // data를 세팅해야 하거나 이벤트 리스너를 선언해야 한다면 이 단계에서 적절하다.
+      created: function () { 
+        this.getImg()
+      }
+    })
+  </script>
+</body>
+</html>
