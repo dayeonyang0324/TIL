@@ -1,4 +1,4 @@
-# Vue.js
+# 🎨Vue.js
 
 > Vue.js는 대표적인 프론트엔트 프레임워크로 사용자에게 데이터를 눈으로 볼 수 있고 상호작용 할 수 있도록 돕는다. 
 >
@@ -25,9 +25,11 @@ vanilla.js는 변경사항이 있다면 '모든 요소'를 선택해서 '이벤�
 
 <br>
 
+<br>
+
 ## Vue.JS
 
-### MVVM Pattern
+### 1. MVVM Pattern
 
 애플리케이션 로직을 UI로부터 분리하기 위해 설계된 디자인 패턴
 
@@ -37,7 +39,7 @@ vanilla.js는 변경사항이 있다면 '모든 요소'를 선택해서 '이벤�
 
 <br>
 
-### Vue instance
+### 2. Vue instance
 
 ```vue
 <div id='app'>
@@ -85,7 +87,7 @@ cosnt app = new Vue({  // 새로운 인스턴스 생성
 
 <br>
 
-### Template Syntax
+### 3. Template Syntax
 
 #### Interpolation (보간법)
 
@@ -107,7 +109,9 @@ cosnt app = new Vue({  // 새로운 인스턴스 생성
 
    `{{ message.split('').reverse().join('') }}`
 
-#### Directive (디렉티브)
+<br>
+
+#### [Directive (디렉티브)](https://github.com/dayeonyang0324/TIL/tree/master/8.%20vuejs/00_intro)
 
 ##### 1. v-text
 
@@ -256,9 +260,7 @@ cosnt app = new Vue({  // 새로운 인스턴스 생성
 
 <br>
 
-<br>
-
-## Component(컴포넌트)
+### 4. Component(컴포넌트)
 
 > SFC(single file component)
 >
@@ -268,17 +270,19 @@ cosnt app = new Vue({  // 새로운 인스턴스 생성
 
 <br>
 
-## Vue CLI
+<br>
+
+## [Vue CLI](https://github.com/dayeonyang0324/TIL/tree/master/8.%20vuejs/01_vue_cli)
 
 > vue.js개발을 위한 표준 도구로서 프로젝트 구성을 도와주는 역할을 하며 vue 개발 생태계에서 표준 tool 기준을 목표로 한다. 
 
-#### Node.js
+### 1. Node.js
 
 Node.js란 자바스크립트를 브라우저가 아닌 환경에서도 구동할 수 있도록 하는 자바스크립트 런타임 환경
 
 (NPM 자바스크립트 언어를 위한 패키지 관리자로 Python의 pip와 같은 역할)
 
-##### Vue CLI 설치
+**Vue CLI 설치**
 
 ```bash
 $ npm install -g @vue/cli
@@ -286,6 +290,18 @@ $ vue --version
 $ vue create (프로젝트 명)
 $ npm run serve
 ```
+
+<br>
+
+####  [vue.js 작성방법](https://github.com/dayeonyang0324/TIL/tree/master/8.%20vuejs/01_vue_cli/1.%20first-vue)
+
+- 프로젝트 생성 후 App.vue에서 `router-link`를 등록하여 보여지는 `nav`를 만들 수 있다. `router`의 `index.js`에 `components`에 `import ` 하고  주소창에 보여질 경로와 이름을 지정해야한다.
+- `views`파일에는 `nav`의 페이지들을 만드는 곳으로 vue파일을 추가해 보여줄 페이지를 만든다.  이때 페이지는 여러개의 component로 구성될 수 있다. 
+- `components`파일을 만든 후 `views/`에 넣을 각각의 components를 만든다. 
+- 각각의 `components`를 `views`에 등록하기 위해서는  3단계를 거친다. 
+  1. `<script>`에 `components`를 `import`한다. 
+  2. `<script>/export default`에 `components`를 등록한다.
+  3. `<template>`에 `<components명>`을 등록하고 같이 보내고 싶은 데이터도 보낼 수 있다.
 
 <br>
 
@@ -313,7 +329,7 @@ $ npm run serve
 
 <br>
 
-### Pass Props & Emit Events
+### 2. Pass Props & Emit Events
 
 - 부모는 자식에게 데이터를 전달(pass props)하며, 자식은 자신에게 일어난 일을 부모에게 알림(emit events).
 
@@ -337,7 +353,7 @@ $ npm run serve
 
 <br>
 
-### Vue Router
+### 3. Vue Router
 
 > 라우팅의 결정권을 가지 vue.js에서 라우팅을 편리하게 할 수 있는 툴을 제공해주는 라이브러리
 
@@ -353,13 +369,13 @@ $ npm run serve
 
 <br>
 
-## Vuex
+## [Vuex](https://github.com/dayeonyang0324/TIL/tree/master/8.%20vuejs/02_vuex)
 
 > 상태를 전역 저장소로 관리할 수 있도록 지원하는 라이브러리로 애플리케이션의 모든 컴포넌트에 대한 중앙 집중식 저장소 역할을 한다. 
 >
 > 중앙 저장소에 data(state)를 모아놓고 관리를 하기 때문에 규모가 큰 프로젝트에 매우 편리하며 각 컴포넌트에서는 중앙 집중 저장소의 state만 신경쓰면 된다. 이를 공유하는 다른 컴포넌트는 알아서 동기화가 된다. 
 
-#### 단방향 데이터 흐름
+### 1. 단방향 데이터 흐름
 
 - 상태(state)는 앱을 작동하는 원본 소스 (data)
 - 뷰(view)는 상태의 선언적 매핑
@@ -369,7 +385,7 @@ $ npm run serve
 
 <br>
 
-#### 상태 관리 패턴
+### 2. 상태 관리 패턴
 
 - 컴포넌트는 공유된 상태를 추출하고 이를 전역에서 관리 하도록 한다. 
 - 모든 컴포넌트는 트리에 상관없이 상테에 엑세스 하거나 동작을 트리거 할 수 있다. 
@@ -377,7 +393,7 @@ $ npm run serve
 
 <br>
 
-#### Vuex 구성 요소
+### 3. Vuex 구성 요소
 
 ![image-20210708003019943](README.assets/image-20210708003019943.png)
 
