@@ -1,23 +1,23 @@
 # 15649
 
-# N, M = map(int, input().split())
-#
-# result = []
-# def back():
-#     # 조건을 만족한다면 탈출
-#     if len(result) == M:
-#         print(*result)
-#         return
-#
-#     # 모든 수를 다 돌면서 조건에 만족한다면 리스트 넣기
-#     for i in range(1, N+1):
-#         if i not in result:
-#             result.append(i)
-#             # 다음 애들을 재귀로 확인한다. 조건 만족하면 탈출 아니라면 꺼내고 다시 반복
-#             back()
-#             result.pop()
-#
-# back()
+N, M = map(int, input().split())
+
+result = []
+def back():
+    # 조건을 만족한다면 탈출
+    if len(result) == M:
+        print(*result)
+        return
+
+    # 모든 수를 다 돌면서 조건에 만족한다면 리스트 넣기
+    for i in range(1, N+1):
+        if i not in result:
+            result.append(i)
+            # 다음 애들을 재귀로 확인한다. 조건 만족하면 탈출 아니라면 꺼내고 다시 반복
+            back()
+            result.pop()
+
+back()
 
 
 # 다른 풀이
