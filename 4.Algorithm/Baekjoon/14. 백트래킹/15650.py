@@ -24,7 +24,7 @@ back(0, 0, N, M)
 
 # 다른풀이
 N, M = map(int, input().split())
-visit = [False] * N  # 방문 확인
+
 result = []
 def back(j):
     if len(result) == M:
