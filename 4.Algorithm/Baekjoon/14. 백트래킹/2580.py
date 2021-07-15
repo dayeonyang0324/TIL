@@ -86,7 +86,6 @@ sdoku(0)
 #     for k in range(1, 10):
 #         if row(i, j) == col(i, j) == smallbox(i, j):
 #             table[i][j] = k
-#             print(table[i][j])
 #             sdoku(index + 1)
 #             table[i][j] = 0
 #
@@ -94,3 +93,44 @@ sdoku(0)
 # table = [list(map(int, input().split())) for _ in range(9)]
 # zero = [(i, j) for i in range(9) for j in range(9) if table[i][j] == 0]
 # sdoku(0)
+
+# 실패 코드 수정
+# table = [list(map(int, input().split())) for _ in range(9)]
+# zero = [(i, j) for i in range(9) for j in range(9) if table[i][j] == 0]
+#
+# def row(i, num):
+#     if num in table[i]:
+#         return False
+#     return True
+#
+#
+# def col(j, num):
+#     for i in range(9):
+#         if num == table[i][j]:
+#             return False
+#     return True
+#
+#
+# def smallbox(i, j, num):
+#     for s in range(3):
+#         for b in range(3):
+#             if num == table[((i//3) * 3) + s][((j//3) * 3) + b]:
+#                 return False
+#     return True
+#
+#
+# def sdoku(index):
+#     if index == len(zero):
+#         for i in table:
+#             print(*i)
+#         sys.exit()
+#
+#     (i, j) = zero[index]
+#     for k in range(1, 10):
+#         if row(i, k) and col(j, k) and smallbox(i, j, k):
+#             table[i][j] = k
+#             sdoku(index + 1)
+#             table[i][j] = 0
+#
+# sdoku(0)
+
